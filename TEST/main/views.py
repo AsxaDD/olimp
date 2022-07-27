@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.password_validation import validate_password
 from django.contrib.auth.views import LoginView
 from django.http import Http404, HttpResponse
+from django.urls import reverse
 from rest_framework import status
 from rest_framework.renderers import JSONRenderer
 from rest_framework.request import Request
@@ -41,7 +42,7 @@ def regView(request):
     # if a GET (or any other method) we'll create a blank form
     else:
         form = RegForm()
-    return render(request, 'main/reg.html', {'form': form})
+    return render(request, 'registration/reg.html', {'form': form})
 
 def loginView(request):
     if request.method == 'POST':
@@ -53,18 +54,10 @@ def loginView(request):
             if user is not None:
                 login(request, user)
                 return HttpResponseRedirect('/')
-            else:
-                return HttpResponseRedirect('wrong-auth-data/')
     else:
         form = LoginForm()
     return render(request, 'main/login.html', {'form': form})
 
-def wrongAuthData(request):
-    return render(request, 'main/wrongauthdata.html')
-
-@api_view(('GET',))
-def thanks(request):
-    return HttpResponse("thanks")
 
 class UserList(APIView):
     """
@@ -121,20 +114,6 @@ class UserList(APIView):
 #             return Response(serializer.data, status=status.HTTP_201_CREATED)
 #         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-def mainPageRender(request):
-    print(request.user.is_authenticated)
-    return render(request, 'main/main.html')
 
-
-from django.contrib.auth import views as auth_views
-
-
-class LoginUser(DataMixin, LoginView):
-    form_class = AuthenticationForm
-    template_name = 'main/login.html'
-    # success_url = re
-
-    def get_context_data(self, *, object_list=None, **kwargs):
-        context = super().get_context_data(**kwargs)
-        # c_def = self.get_user_context(title="Авторизация")
-        return context
+def mainPageRender(request): return render(request, 'main/main.html')
+def graphs(request): return render(request, 'lessons/graphs.html')

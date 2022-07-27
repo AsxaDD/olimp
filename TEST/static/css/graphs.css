@@ -1,0 +1,91 @@
+/*/////////////////////////////*/
+.g__header{
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    top: 80px;
+}
+.g__el{
+    position: relative;
+}
+.g__el:hover{
+    /* Created with https://www.css-gradient.com */
+background: rgba(255, 24, 24, 0.8);
+background: -webkit-linear-gradient(bottom left, rgba(255, 24, 24, 0.8), rgba(255, 191, 191, 1.0));
+background: -moz-linear-gradient(bottom left, rgba(255, 24, 24, 0.8), rgba(255, 191, 191, 1.0));
+background: linear-gradient(to top right, rgba(255, 24, 24, 0.8), rgba(255, 191, 191, 1.0));
+
+}
+.g__el:hover .g__header{
+    top: 28px;
+    left: 13px;
+    right: 250px;
+}
+
+.line{
+    position: absolute;
+    padding: 0px;
+    border-radius: 10px;
+    transform: rotate(45deg);
+}
+.line1{
+    width: 20px;
+    border-top: black solid 5px;
+    bottom: 13px;
+    left: 7px;
+}
+.line2{
+    width: 40px;
+    border-top: rgb(203, 8, 8) solid 5px;
+    bottom: 21px;
+    left: 6px;
+}
+.line3{
+    width: 56px;
+    border-top: black solid 5px;
+    bottom: 29px;
+    left: 8px;
+}
+
+
+
+.l1{
+    width: 20px;
+    border-top: black solid 5px;
+    top: 13px;
+    right: 7px;
+}
+.l2{
+    width: 40px;
+    border-top: rgb(203, 8, 8) solid 5px;
+    top: 21px;
+    right: 6px;
+}
+.l3{
+    width: 56px;
+    border-top: black solid 5px;
+    top: 29px;
+    right: 8px;
+}
+.g__text{
+    text-align: left;
+    position: absolute;
+    top: 60px;
+    left: 30px;
+    transition: all 0.3;
+}
+
+.g__el img{
+    width: 35px;
+    height: 35px;
+
+}
+.g__for__logos{
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    gap: 20px;
+
+    display: flex;
+}

@@ -1,0 +1,24 @@
+.b__header{
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    top: 80px;
+}
+.b__el:hover{
+    /* Created with https://www.css-gradient.com */
+/* Created with https://www.css-gradient.com */
+background: rgba(255, 130, 9, 0.8);
+background: -webkit-linear-gradient(bottom left, rgba(255, 130, 9, 0.8), rgba(255, 222, 184, 1.0));
+background: -moz-linear-gradient(bottom left, rgba(255, 130, 9, 0.8), rgba(255, 222, 184, 1.0));
+background: linear-gradient(to top right, rgba(255, 130, 9, 0.8), rgba(255, 222, 184, 1.0));
+}
+.b__el:hover .b__header{
+    top: 25px;
+    left: 10px;
+    right: 250px;
+}
+.b__header{
+    top: 65px;
+}
+.b__el:hover .b__tmp{display: none;}

@@ -24,4 +24,5 @@ urlpatterns = [
     path('accounts/', include('main.urls')),
     path('', views.mainPageRender, name='mainPageRender'),
     path('themes/graphs/', views.graphs, name='graphs'),
+    path('api/check', views.check, name='check'),
 ]

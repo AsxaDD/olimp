@@ -1,8 +1,10 @@
+import json
+
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
 from django.contrib.auth.password_validation import validate_password
 from django.contrib.auth.views import LoginView
-from django.http import Http404, HttpResponse
+from django.http import Http404, HttpResponse, JsonResponse
 from django.urls import reverse
 from rest_framework import status
 from rest_framework.renderers import JSONRenderer
@@ -42,7 +44,7 @@ def regView(request):
     # if a GET (or any other method) we'll create a blank form
     else:
         form = RegForm()
-    return render(request, 'registration/reg.html', {'form': form})
+    return render(request, 'templates/registration/reg.html', {'form': form})
 
 def loginView(request):
     if request.method == 'POST':
@@ -56,7 +58,7 @@ def loginView(request):
                 return HttpResponseRedirect('/')
     else:
         form = LoginForm()
-    return render(request, 'main/login.html', {'form': form})
+    return render(request, 'registration/login.html', {'form': form})
 
 
 class UserList(APIView):
@@ -115,5 +117,12 @@ class UserList(APIView):
 #         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-def mainPageRender(request): return render(request, 'main/main.html')
+def mainPageRender(request): return render(request, 'index.html')
 def graphs(request): return render(request, 'lessons/graphs.html')
+
+@api_view(('GET',))
+def check(request):
+    if request.user.is_authenticated:
+        return JsonResponse({"name": request.user.username, "isAuth": "1"})
+    else:
+        return JsonResponse({"isAuth": "0"})

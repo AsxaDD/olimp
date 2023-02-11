@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+.top__menu{
+    /* height: 55px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    max-width: 950px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    font-family: 'Nunito';
+    font-size: large;
+    font-weight: bold;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+.top__menu__wrapper{
+    box-shadow: 0px 1px 7px -1px ;
+    position: sticky;
+    top: 0px;
+    background-color: white;
+    z-index: 1000000;
+}
+.right__top__menu{
+    margin: 0px 10px;
+}
+.center__menu__elem{
+    display: flex;
+    height: 25px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 10px;
+}
+.center__menu__elem:hover .moving__part{
+    margin-left: 100px;
+}
+
+.moving__part{
+    transition: all 0.5s;
+    position: absolute;
+    top: -3px;
+    height: 100%;
+    width: 100%;
+    border-bottom: solid white 3px;
+}
+.nav__bar{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.logo{
+    width: 150px;
+
+}
+
+.red{
+    border-bottom: solid red 3px;
+}
+.orange{
+    border-bottom: solid orange 3px;
+}
+.yellow{
+    border-bottom: solid yellow 3px;
+}
+.green{
+    border-bottom: solid green 3px;
+}
+.lblue{
+    border-bottom: solid rgb(0, 162, 232) 3px;
+}
+.blue{
+    border-bottom: solid blue 3px;
+}
+.purple{
+    border-bottom: solid purple 3px;
+}
+
+.study:hover .red .yellow .green .lblue .blue .purple {
+
+}
+.logo__wrapper{
+    display: flex;
+    align-items: center;
+}

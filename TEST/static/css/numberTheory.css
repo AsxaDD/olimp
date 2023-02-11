@@ -1,0 +1,19 @@
+.t__header{
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    top: 80px;
+}
+.t__el:hover{
+/* Created with https://www.css-gradient.com */
+background: rgba(6, 172, 1, 0.8);
+background: -webkit-linear-gradient(bottom left, rgba(6, 172, 1, 0.8), rgba(196, 255, 184, 1.0));
+background: -moz-linear-gradient(bottom left, rgba(6, 172, 1, 0.8), rgba(196, 255, 184, 1.0));
+background: linear-gradient(to top right, rgba(6, 172, 1, 0.8), rgba(196, 255, 184, 1.0));
+}
+.t__el:hover .t__header{
+    top: 25px;
+    left: 10px;
+    right: 250px;
+}

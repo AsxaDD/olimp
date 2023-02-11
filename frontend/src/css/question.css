@@ -1,0 +1,43 @@
+.question__main{
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+.question__main h1{
+    margin: 5px;
+}
+.question__main li{
+    cursor: pointer;
+    padding-bottom: 10px;
+}
+.question__answer{
+    margin: 5px 5px 5px 0;
+}
+
+.right__answer{
+    color: green;
+    padding-left: 20px;
+    background-image: url("../pics/galka.png");
+    background-position: -1px 3px;
+    background-size: 17px 17px;
+    background-repeat: no-repeat;
+    list-style-type: none;
+    transition: padding-left 0.1s;
+}
+.wrong__answer{
+    color: red;
+    padding-left: 20px;
+    background-image: url("../pics/krest.png");
+    background-position: 0 3px;
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+    list-style-type: none;
+    transition: padding-left 0.1s;
+}
+.test__block{
+    background-image: url("../pics/krest.png");
+    width: 15px;
+    height: 15px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

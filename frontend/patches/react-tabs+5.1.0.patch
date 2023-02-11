@@ -1,0 +1,54 @@
+diff --git a/node_modules/react-tabs/src/components/Tab.js b/node_modules/react-tabs/src/components/Tab.js
+index f120b89..2367f69 100644
+--- a/node_modules/react-tabs/src/components/Tab.js
++++ b/node_modules/react-tabs/src/components/Tab.js
+@@ -1,6 +1,7 @@
+ import PropTypes from 'prop-types';
+-import React, { useEffect, useRef } from 'react';
++import React, { useEffect, useRef, useState } from 'react';
+ import cx from 'clsx';
++import randGradient from "../../../../src/lessons/graphs/script";
+ 
+ const DEFAULT_CLASS = 'react-tabs__tab';
+ const defaultProps = {
+@@ -48,11 +49,27 @@ const Tab = (props) => {
+     tabRef,
+     ...attributes
+   } = props;
++  let [r1, ch_r1] = useState(0);
++  let [g1, ch_g1] = useState(0);
++  let [b1, ch_b1] = useState(0);
++  let [r2, ch_r2] = useState(0);
++  let [g2, ch_g2] = useState(0);
++  let [b2, ch_b2] = useState(0);
++
++  let [n1, ch_n1] = useState(0);
++  let [n2, ch_n2] = useState(0);
++
++  let [o1, ch_o1] = useState(0);
++  let [o2, ch_o2] = useState(0);
++
++  let [s, ch_s] = useState("");
+ 
+   useEffect(() => {
+     if (selected && focus) {
+       nodeRef.current.focus();
+     }
++    console.log(121324134131343);
++
+   }, [selected, focus]);
+ 
+   return (
+@@ -73,6 +90,12 @@ const Tab = (props) => {
+       aria-controls={`panel${id}`}
+       tabIndex={tabIndex || (selected ? '0' : null)}
+       data-rttab
++      onClick={() => {
++        let d = randGradient();
++        console.log(123, d);
++
++       }}
++      style={s}
+     >
+       {children}
+     </li>

@@ -1,0 +1,690 @@
+
+.abs__center{
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.a__header{
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 80px;
+}
+.a__el:hover{
+    /* Created with https://www.css-gradient.com */
+    /* Created with https://www.css-gradient.com */
+    background: rgba(140, 1, 197, 0.8);
+    background: -webkit-linear-gradient(bottom left, rgba(140, 1, 197, 0.8), rgba(231, 193, 255, 1.0));
+    background: -moz-linear-gradient(bottom left, rgba(140, 1, 197, 0.8), rgba(231, 193, 255, 1.0));
+    background: linear-gradient(to top right, rgba(140, 1, 197, 0.8), rgba(231, 193, 255, 1.0));
+}
+.a__el:hover .a__header{
+    top: 25px;
+    left: 10px;
+    right: 250px;
+}
+
+
+
+
+
+
+
+
+
+.b__header{
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+}
+.b__header1{
+    top: 65px;
+}
+.b__header2{
+    top: 110px;
+}
+.b__el:hover .b__header1{
+    top: 35px;
+    left: -115px;
+}
+.b__el:hover .b__header2{
+    top: 35px;
+    right: -110px;
+}
+.b__header1_h{
+    top: 35px;
+    left: -115px;
+}
+.b__header2_h{
+    top: 35px;
+    right: -110px;
+}
+
+.b__el:hover{
+    /* Created with https://www.css-gradient.com */
+    /* Created with https://www.css-gradient.com */
+    background: rgba(255, 130, 9, 0.8);
+    background: -webkit-linear-gradient(bottom left, rgba(255, 130, 9, 0.8), rgba(255, 222, 184, 1.0));
+    background: -moz-linear-gradient(bottom left, rgba(255, 130, 9, 0.8), rgba(255, 222, 184, 1.0));
+    background: linear-gradient(to top right, rgba(255, 130, 9, 0.8), rgba(255, 222, 184, 1.0));
+}
+.b__el_h{
+    background: rgba(255, 130, 9, 0.8);
+    background: -webkit-linear-gradient(bottom left, rgba(255, 130, 9, 0.8), rgba(255, 222, 184, 1.0));
+    background: -moz-linear-gradient(bottom left, rgba(255, 130, 9, 0.8), rgba(255, 222, 184, 1.0));
+    background: linear-gradient(to top right, rgba(255, 130, 9, 0.8), rgba(255, 222, 184, 1.0));
+    position: relative;
+}
+
+.b__text{
+    text-align: justify;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 75px;
+    width: 298px;
+}
+
+
+.b__tmp{
+    width: 200px;
+    margin: 0 auto;
+}
+.b__el:hover .b__tmp{
+    width: 500px;
+}
+
+.b__ramka{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+}
+
+.b__ramka1{
+    top: 10px;
+    left: 12px;
+}
+.b__el:hover .b__ramka1{
+    border-left: 5px solid #e96d00;
+    border-radius: 15px 2px 2px 2px;
+    border-top: 5px solid #e96d00;
+}
+.b__ramka1_h{
+    top: 10px;
+    left: 12px;
+    border-left: 5px solid #e96d00;
+    border-radius: 15px 2px 2px 2px;
+    border-top: 5px solid #e96d00;
+}
+
+.b__ramka2{
+    bottom: 10px;
+    left: 12px;
+}
+.b__el:hover .b__ramka2{
+    border-left: 5px solid #e96d00;
+    border-radius: 2px 2px 2px 15px;
+    border-bottom: 5px solid #e96d00;
+}
+.b__ramka2_h{
+    bottom: 10px;
+    left: 12px;
+    border-left: 5px solid #e96d00;
+    border-radius: 2px 2px 2px 15px;
+    border-bottom: 5px solid #e96d00;
+}
+
+.b__ramka3{
+    right: 12px;
+    top: 10px;
+}
+.b__el:hover .b__ramka3{
+    border-right: 5px solid #e96d00;
+    border-radius: 2px 15px 2px 2px;
+    border-top: 5px solid #e96d00;
+}
+.b__ramka3_h{
+    right: 12px;
+    top: 10px;
+    border-right: 5px solid #e96d00;
+    border-radius: 2px 15px 2px 2px;
+    border-top: 5px solid #e96d00;
+}
+
+.b__ramka4{
+    bottom: 10px;
+    right: 12px;
+}
+.b__el:hover .b__ramka4{
+    border-right: 5px solid #e96d00;
+    border-radius: 2px 2px 15px 2px;
+    border-bottom: 5px solid #e96d00;
+}
+.b__ramka4_h{
+    bottom: 10px;
+    right: 12px;
+    border-right: 5px solid #e96d00;
+    border-radius: 2px 2px 15px 2px;
+    border-bottom: 5px solid #e96d00;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.c__header{
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 80px;
+}
+.c__el:hover{
+    /* Created with https://www.css-gradient.com */
+    /* Created with https://www.css-gradient.com */
+    /* Created with https://www.css-gradient.com */
+    background: rgba(21, 13, 185, 0.8);
+    background: -webkit-linear-gradient(bottom left, rgba(21, 13, 185, 0.8), rgba(179, 186, 255, 1.0));
+    background: -moz-linear-gradient(bottom left, rgba(21, 13, 185, 0.8), rgba(179, 186, 255, 1.0));
+    background: linear-gradient(to top right, rgba(21, 13, 185, 0.8), rgba(179, 186, 255, 1.0));
+}
+.c__el:hover .c__header{
+    top: 25px;
+    left: 10px;
+    right: 250px;
+}
+
+
+
+
+.transparent__div{
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+}
+.transparent__div h3{
+    margin: 0;
+}
+
+
+
+
+
+
+.all__h__headers{
+    font-size: 30px;
+    color: black;
+    font-weight: 600;
+    font-family: "Rubik";
+    position: absolute;
+    transition: all 0.3s;
+}
+.all__h__cell__shadows{
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border: solid black 3px;
+}
+
+
+
+
+
+
+/*/////////////////////////////*/
+.g__header{
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 80px;
+}
+.g__el{
+    position: relative;
+}
+.g__el:hover{
+    /* Created with https://www.css-gradient.com */
+    background: rgba(255, 24, 24, 0.8);
+    background: -webkit-linear-gradient(bottom left, rgba(255, 24, 24, 0.8), rgba(255, 191, 191, 1.0));
+    background: -moz-linear-gradient(bottom left, rgba(255, 24, 24, 0.8), rgba(255, 191, 191, 1.0));
+    background: linear-gradient(to top right, rgba(255, 24, 24, 0.8), rgba(255, 191, 191, 1.0));
+}
+.g__el_h{
+    position: relative;
+    background: rgba(255, 24, 24, 0.8);
+    background: -webkit-linear-gradient(bottom left, rgba(255, 24, 24, 0.8), rgba(255, 191, 191, 1.0));
+    background: -moz-linear-gradient(bottom left, rgba(255, 24, 24, 0.8), rgba(255, 191, 191, 1.0));
+    background: linear-gradient(to top right, rgba(255, 24, 24, 0.8), rgba(255, 191, 191, 1.0));
+}
+.g__el:hover .g__header{
+    top: 28px;
+}
+.g__header_h{
+    top: 28px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.line{
+    position: absolute;
+    padding: 0;
+    border-radius: 10px;
+    transform: rotate(45deg);
+}
+.linetwo{
+    border-top: rgb(203, 8, 8) solid 5px;
+    width: 20px;
+    transform: rotate(-45deg);
+}
+.l4{
+    bottom: 13px;
+    right: 7px;
+}
+.l5{
+    top: 13px;
+    left: 7px;
+}
+.linethree{
+    border-top: rgb(203, 8, 8) solid 5px;
+    transform: rotate(-45deg);
+    width: 40px;
+}
+.lt1{
+    bottom: 21px;
+    right: 6px;
+}
+.lt2{
+    top: 21px;
+    left: 6px;
+}
+
+.line1{
+    width: 20px;
+    bottom: 13px;
+    left: 7px;
+}
+.line1{
+    border-top: rgb(203, 8, 8) solid 5px;
+}
+.line3{
+    border-top: rgb(203, 8, 8) solid 5px;
+}
+.l3{
+    border-top: rgb(203, 8, 8) solid 5px;
+}
+.l1{
+    border-top: rgb(203, 8, 8) solid 5px;
+}
+.line2{
+    border-top: rgb(203, 8, 8) solid 5px;
+}
+.l2{
+    border-top: rgb(203, 8, 8) solid 5px;
+}
+
+.line2{
+    width: 40px;
+    bottom: 21px;
+    left: 6px;
+}
+.line3{
+    width: 56px;
+    bottom: 29px;
+    left: 8px;
+}
+.l1{
+    width: 20px;
+    top: 13px;
+    right: 7px;
+}
+.l2{
+    width: 40px;
+    top: 21px;
+    right: 6px;
+}
+.l3{
+    width: 56px;
+    top: 29px;
+    right: 8px;
+}
+.g__text{
+    text-align: justify;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 60px;
+    width: 298px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.t__header{
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 80px;
+}
+.t__el{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.t__el:hover{
+    /* Created with https://www.css-gradient.com */
+    background: rgba(6, 172, 1, 0.8);
+    background: -webkit-linear-gradient(bottom left, rgba(6, 172, 1, 0.8), rgba(196, 255, 184, 1.0));
+    background: -moz-linear-gradient(bottom left, rgba(6, 172, 1, 0.8), rgba(196, 255, 184, 1.0));
+    background: linear-gradient(to top right, rgba(6, 172, 1, 0.8), rgba(196, 255, 184, 1.0));
+}
+.t__el_h{
+    position: relative;
+    background: rgba(6, 172, 1, 0.8);
+    background: -webkit-linear-gradient(bottom left, rgba(6, 172, 1, 0.8), rgba(196, 255, 184, 1.0));
+    background: -moz-linear-gradient(bottom left, rgba(6, 172, 1, 0.8), rgba(196, 255, 184, 1.0));
+    background: linear-gradient(to top right, rgba(6, 172, 1, 0.8), rgba(196, 255, 184, 1.0));
+}
+
+.t__text{
+    text-align: justify;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 65px;
+    width: 320px;
+}
+
+.t__el:hover .t__header{
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 30px;
+}
+.t__header_h{
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 30px;
+}
+.t__border{
+    width: 99%;
+    height: 99%;
+    border-radius: 10px;
+}
+.t__el:hover .t__border{
+    width: 376px;
+    height: 188px;
+    border: 4px green solid;
+}
+.t__border_h{
+    width: 376px;
+    height: 188px;
+    border: 4px green solid;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.d__el:hover{
+    background: rgba(255, 234, 19, 0.8);
+    background: -webkit-linear-gradient(bottom left, rgba(255, 234, 19, 0.8), rgba(255, 254, 184, 1.0));
+    background: -moz-linear-gradient(bottom left, rgba(255, 234, 19, 0.8), rgba(255, 254, 184, 1.0));
+    background: linear-gradient(to top right, rgba(255, 234, 68, 0.8), rgb(255, 254, 199));
+}
+.d__el_h{
+    background: rgba(255, 234, 19, 0.8);
+    background: -webkit-linear-gradient(bottom left, rgba(255, 234, 19, 0.8), rgba(255, 254, 184, 1.0));
+    background: -moz-linear-gradient(bottom left, rgba(255, 234, 19, 0.8), rgba(255, 254, 184, 1.0));
+    background: linear-gradient(to top right, rgba(255, 234, 68, 0.8), rgb(255, 254, 199));
+}
+.d__header{
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 80px;
+    width: 200px;
+}
+.d__header_h{
+    top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+.d__el:hover .d__header{
+    top: 30px;
+}
+.d__lines{
+    position: absolute;
+    width: 350px;
+    height: 180px;
+    top: 15px;
+    left: 20px;
+}
+.d__el:hover .d__lines{
+    border-left: 6px rgb(219, 217, 28) dashed;
+    border-right: 6px rgb(219, 217, 28) dashed;
+}
+.d__lines_h{
+    border-left: 6px rgb(219, 217, 28) dashed;
+    border-right: 6px rgb(219, 217, 28) dashed;
+}
+.d__text{
+    text-align: justify;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 75px;
+    width: 298px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.dyn__el{
+    overflow: hidden;
+}
+
+.dyn__el:hover {
+    background: rgba(1, 172, 231, 0.8);
+    background: -webkit-linear-gradient(bottom left, rgba(1, 172, 231, 0.8), rgba(184, 255, 255, 1.0));
+    background: -moz-linear-gradient(bottom left, rgba(1, 172, 231, 0.8), rgba(184, 255, 255, 1.0));
+    background: linear-gradient(to top right, rgba(1, 172, 231, 0.8), rgba(184, 255, 255, 1.0));
+}
+.dyn__el_h{
+    position: relative;
+    background: rgba(1, 172, 231, 0.8);
+    background: -webkit-linear-gradient(bottom left, rgba(1, 172, 231, 0.8), rgba(184, 255, 255, 1.0));
+    background: -moz-linear-gradient(bottom left, rgba(1, 172, 231, 0.8), rgba(184, 255, 255, 1.0));
+    background: linear-gradient(to top right, rgba(1, 172, 231, 0.8), rgba(184, 255, 255, 1.0));
+}
+.dyn__text{
+    text-align: justify;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 80px;
+    width: 330px;
+}
+.dyn__el:hover .dyn__text{
+    opacity: 1;
+}
+
+
+.dyn__line1{
+    position: absolute;
+    width: 350px;
+    height: 22px;
+    border-radius: 4px 4px 15px 4px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 13px;
+}
+.dyn__el:hover .dyn__line1{
+     border-bottom: 6px #0788ad solid;
+     border-right: 6px #0788ad solid;
+ }
+.dyn__line1_h{
+    position: absolute;
+    width: 350px;
+    height: 22px;
+    border-radius: 4px 4px 15px 4px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 13px;
+    border-bottom: 6px #0788ad solid;
+    border-right: 6px #0788ad solid;
+}
+.dyn__el:hover .dyn__line2{
+    border-left: 6px #0788ad solid;
+    border-top: 6px #0788ad solid;
+}
+
+.dyn__line2{
+    position: absolute;
+    width: 350px;
+    height: 22px;
+    border-radius: 15px 4px 4px 4px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 13px;
+}
+.dyn__line2_h{
+    position: absolute;
+    width: 350px;
+    height: 22px;
+    border-radius: 15px 4px 4px 4px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 13px;
+    border-left: 6px #0788ad solid;
+    border-top: 6px #0788ad solid;
+}
+.org{
+    position: absolute;
+    top: 56px;
+    right: 38px;
+}
+.ina{
+    position: absolute;
+    top: 26px;
+    left: 68px;
+}
+
+.dyn__header1 {
+    left: 0;
+    right: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    top: 80px;
+}
+.dyn__el:hover .dyn__header1{
+    left: -243px;
+    top: 23px;
+}
+.dyn__header1_h{
+    left: -287px;
+    top: 26px;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dyn__header2{
+    left: 45px;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 80px;
+}
+.dyn__el:hover .dyn__header2{
+    left: -250px;
+    top: 56px;
+}
+.dyn__header2_h{
+    left: -250px;
+    top: 53px;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}

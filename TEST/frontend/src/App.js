@@ -1,6 +1,6 @@
 import './App.css';
-import Topbar from "./baza/topbar";
-import MainPageGrid from "./baza/mainpage";
+import Topbar from "./baza/Topbar";
+import MainPageGrid from "./baza/Mainpage";
 
 function App() {
   return (

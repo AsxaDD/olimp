@@ -6,9 +6,13 @@ import {
     Routes,
     Route,
 } from "react-router-dom";
-import Graphs from "./routers/graphs";
+import Graphs from "./lessons/graphs/graphs.js";
 import App from './App';
+import Userpage from "./baza/Userpage";
 import reportWebVitals from './reportWebVitals';
+import MyCalendar from "./baza/MyCalendar";
+import CreateEvent from "./baza/Create_event_form";
+import MyNews2 from "./baza/News2";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,6 +21,12 @@ root.render(
           <Routes>
               <Route path="/" element={<App />} />
               <Route path="graphs" element={<Graphs />} />
+              <Route path="calendar" element={<MyCalendar />} />
+              <Route path="news" element={<MyNews2 />} />
+              <Route path="accounts">
+                  <Route path=":username" element={<Userpage />} />
+              </Route>
+              <Route path="admin/create_event" element={<CreateEvent />} />
           </Routes>
       </BrowserRouter>
   </React.StrictMode>

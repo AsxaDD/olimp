@@ -1,117 +1,46 @@
 import json
-import requests
-from bs4 import BeautifulSoup
-from django.contrib.auth.password_validation import validate_password
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from rest_framework import status
-from rest_framework.renderers import JSONRenderer
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from main.serializers import UserSerializer
 from rest_framework.views import APIView
-from django.contrib.auth import login
-from .models import MyUser, Events, RuNews, EngNews
+from .models import Events, RuNews, EngNews
 from .serializers import EventsSerializer, RuNewsSerializer, EngNewsSerializer
-from .utils import *
-from django.http import HttpResponseRedirect
-from django.shortcuts import render
-from .forms import RegForm
 
 
-@api_view(('GET',))
-def TEST__USER(request):
-    user = User.objects.get(username="AsxaD4")
-    data = UserSerializer(user)
-    return JsonResponse(data.data)
+def create_article(request):
+    data = request.POST
+    if data['status'] == 'true':
 
+        if data['lang'] == 'ru':
+            last_one = RuNews.objects.filter(tag=data['tag']).order_by('-id')[0]
+            if data['title'] != last_one.title:
+                article = RuNews(
+                    title=data['title'],
+                    content=data['content'],
+                    date=json.loads(data['date']),
+                    link=data['link'],
+                    pic=data['pic'],
+                    tag=data['tag'],
+                )
+                article.save()
+        else:
+            last_one = EngNews.objects.filter(tag=data['tag']).order_by('-id')[0]
+            if data['title'] != last_one.title:
 
-@api_view(('GET', 'POST',))
-def regView(request):
-    # if this is a POST request we need to process the form data
-    if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
-        form = RegForm(request.POST)
-        # check whether it's valid:
-        if form.is_valid():
-            try:
-                validate_password(form.cleaned_data["password"])
-            except:
-                return JsonResponse({"Error": "Weak password"}, status=status.HTTP_400_BAD_REQUEST)
+                print(data['date'])
 
-            user = User.objects.create_user(form.cleaned_data["username"])
-            myuser = MyUser(user=user)
-            user.set_password(form.cleaned_data["password"])
-            user.first_name = form.cleaned_data["first_name"]
-            user.last_name = form.cleaned_data["last_name"]
-            user.save()
-            myuser.save()
-            login(request, user)
-            return HttpResponseRedirect('/')
-    # if a GET (or any other method) we'll create a blank form
-    else:
-        form = RegForm()
-    return render(request, 'registration/reg.html', {'form': form})
-class UserList(APIView):
-    """
-    List all users, or create a new user.
-    """
-    def get(self, request):
-        users = User.objects.all()
-        serializer = UserSerializer(users, many=True)
-        return Response(JSONRenderer().render(serializer.data))
-
-    def post(self, request):
-        '''
-
-        КРАЙНЕ СЫРОЙ ОБРАБОТЧИК ВХОДЯЩИХ ДАННЫХ!
-        Необходимо сделать проверку корректности пароля,
-        проверку на уникальный юзернейм
-
-        '''
-
-        try:
-            validate_password(request.data["password"])
-        except:
-            return Response({"Error": "Weak password"}, status=status.HTTP_400_BAD_REQUEST)
-
-        user = User.objects.create_user(request.data["username"])
-        user.set_password(request.data["password"])
-        user.save()
-        return Response(request.data, status=status.HTTP_201_CREATED)
-# class CurrentUser(APIView):
-#     """
-#     List all snippets, or create a new snippet.
-#     Если GET-запрос, отправить в ответ шаблон
-#     пользовательской страницы
-#     Если POST-запрос, обновить информацию о пользователе
-#     """
-#     def get_user(self, pk):
-#         try:
-#             return User.objects.get(pk=pk)
-#         except User.DoesNotExist:
-#             raise Http404
-#
-#     def get(self, request, format=None):
-#         snippets = Snippet.objects.all()
-#         serializer = SnippetSerializer(snippets, many=True)
-#         return Response(serializer.data)
-#
-#     def post(self, request, format=None):
-#         serializer = SnippetSerializer(data=request.data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             return Response(serializer.data, status=status.HTTP_201_CREATED)
-#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-
-# from .tasks import supper_sum
-def mainPageRender(request):
-    # abnews_parser()
-    return render(request, 'index.html')
-def graphs(request):
-    # tpropger_parser()
-
-    return render(request, 'lessons/graphs.html')
+                article = EngNews(
+                    title=data['title'],
+                    content=data['content'],
+                    date=json.loads(data['date']),
+                    link=data['link'],
+                    pic=data['pic'],
+                    tag=data['tag'],
+                )
+                article.save()
+        return HttpResponse(headers={'ok': 200})
+    return HttpResponse(headers={'404': 404})
 
 
 
@@ -119,63 +48,20 @@ def graphs(request):
 
 
 
-@api_view(('GET',))
-def check_isAuthenticated(request):
-    if request.user.is_authenticated:
-        return JsonResponse({"name": request.user.username, "isAuth": "1"})
-    else:
-        return JsonResponse({"isAuth": "0"})
 
 
-## *ГЛАВНАЯ ФУНКЦИЯ*, если пользователь авторизован,
-## возвращает все его данные в виде Json.
-## В другом случае, возвращает "isAuth: 0"
-@api_view(('GET',))
-def checkUser(request):
-    if request.user.is_authenticated:
-        return JsonResponse((UserSerializer(User.objects.get(username=request.user))).data)
-    else:
-        user = User.objects.get(username="AsxaD4")
-        data = UserSerializer(user)
-        return JsonResponse(data.data)
-        # return JsonResponse({"isAuth": "0"})
 
 
-def chekingACMPTasks(user_id):
-    headers = {
-        "Accept": "*/*",
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36"
-    }
-    url = "https://acmp.ru/index.asp?main=user&id=" + str(user_id)
-    req = requests.get(url, headers=headers)
-    src = req.text
 
-    soup = BeautifulSoup(src, "lxml")
-    arr = []
 
-    for link in soup.find_all('a'):
-        if "?main=task&id_task=" in link.get("href"):
-            arr.append(link.getText())
 
-    return arr
 
-@api_view(('GET',))
-def return_acmpTasks(request):
 
-    tasks = chekingACMPTasks("403815")
-    return JsonResponse({"tasks": tasks})
 
-# @api_view(('GET',))
-# def return_acmpTasks(request):
-#     if request.user.is_authenticated:
-#         tasks = chekingACMPTasks(request.user.myuser.acmp_id)
-#         request.user.myuser.solved_problems = json.dumps({ tasks[i] : tasks[i] for i in range(0, len(tasks) ) })
-#         if not request.user.myuser.quantity_of_solved_problems:
-#             request.user.myuser.quantity_of_solved_problems = len(tasks)
-#         request.user.myuser.save()
-#         return JsonResponse({"tasks": tasks})
-#     else:
-#         return JsonResponse({"Error": "User is not authenticated"}, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+
 
 
 import ast

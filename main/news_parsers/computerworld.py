@@ -1,7 +1,6 @@
+import json
 from bs4 import BeautifulSoup
 import requests
-from main.models import EngNews
-
 from main.news_parsers.summorising_text_func import summarisingText
 
 
@@ -10,20 +9,18 @@ def computerworld_parser():
         "Accept": "*/*",
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36"
     }
+    try:
+        req1 = requests.get("https://www.computerworld.com/", headers=headers)
+        soup1 = BeautifulSoup(req1.text, "lxml")
+        links = []
 
-    req1 = requests.get("https://www.computerworld.com/", headers=headers)
-    soup1 = BeautifulSoup(req1.text, "lxml")
-    links = []
+        for link in soup1.find_all('a'):
+            if link.has_attr('class'):
+                if link["class"][0] == "well-img-inner":
+                    links.append("https://www.computerworld.com/" + link.get("href"))
 
-    for link in soup1.find_all('a'):
-        if link.has_attr('class'):
-            if link["class"][0] == "well-img-inner":
-                links.append("https://www.computerworld.com/" + link.get("href"))
+        link = links[0]
 
-
-    article_date = {}
-
-    for link in links:
         req = requests.get(link, headers=headers)
         soup = BeautifulSoup(req.text, 'lxml')
         h1 = soup.find_all('h1')[0]
@@ -36,7 +33,7 @@ def computerworld_parser():
                     text += (' ' + t.getText())
 
             summary = summarisingText(text)
-
+            header = h1.getText()
             date = soup.find_all("span", {"class": "pub-date"})
             date = date[0].get("content")
             article_date = {
@@ -45,20 +42,24 @@ def computerworld_parser():
                 'day': date[8:10],
             }
 
-            try:
-                fig = soup.find_all("figure", {"class": "hero-img"})
-                img = fig[0].findChildren("img")[0]["data-original"]
-            except:
-                continue
 
-            if len(summary) >= 5:
-                article = EngNews(
-                    title=h1.getText(),
-                    content=summary,
-                    date=article_date,
-                    link=link,
-                    pic=img,
-                    tag='it'
-                )
+            fig = soup.find_all("figure", {"class": "hero-img"})
+            img = fig[0].findChildren("img")[0]["src"]
 
-                article.save()
+            res = {
+                'status': 'true',
+                'title': header,
+                'content': summary,
+                'date': json.dumps(article_date),
+                'link': link,
+                'pic': img,
+                'tag': 'it',
+                'lang': 'eng',
+            }
+    except:
+        res = {
+            'status': 'false',
+        }
+    requests.post('http://127.0.0.1:8000/api/create_article', data=res)
+
+computerworld_parser()

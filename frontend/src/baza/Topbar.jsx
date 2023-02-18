@@ -3,8 +3,8 @@ import logo from '../pics/logo.png'
 import React from 'react';
 
 const Topbar = () => {
-    let a1 = <span href="accounts/login">ㅤㅤㅤ</span>
-    let a2 = <span href="accounts/register">ㅤㅤㅤ</span>
+    let a1 = <span style={{color: 'white'}} href="accounts/login">бип</span>
+    let a2 = <span style={{color: 'white'}} href="accounts/register">боп</span>
 
 
     return (

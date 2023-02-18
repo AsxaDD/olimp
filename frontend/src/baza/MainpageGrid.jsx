@@ -55,7 +55,7 @@ const Trees = (props) => {
     }, [f, props.flag])
 
     return(
-        <div className={check(f) ? 'el all__h__cell__shadows d__el_h d__el' : 'el d__el'}
+        <a href="trees/" className={check(f) ? 'el all__h__cell__shadows d__el_h d__el' : 'el d__el'}
              onMouseEnter={() => {setTr(1)}}
              onMouseLeave={() => {setTr(0)}}>
             <div className={check(f) ? 'all__h__headers d__header_h' : 'header d__header'}>
@@ -70,7 +70,7 @@ const Trees = (props) => {
             <div className={check(f) ? '' : 'invisible__block'}>
                 <div className={check(f) ? 'd__lines d__lines_h' : 'd__lines'} />
             </div>
-        </div>
+        </a>
     )
 }
 const NumberTheory = (props) => {
@@ -117,7 +117,7 @@ const DynamicProg = (props) => {
     }, [f, props.flag])
 
     return(
-        <div className={check(f) ? 'el all__h__cell__shadows dyn__el_h dyn__el' : 'el dyn__el'}
+        <a href="dp/" className={check(f) ? 'el all__h__cell__shadows dyn__el_h dyn__el' : 'el dyn__el'}
         onMouseEnter={() => {setTr(1)}}
            onMouseLeave={() => {setTr(0)}}
         >
@@ -141,7 +141,7 @@ const DynamicProg = (props) => {
                 : is_transparent === 1 ? {transition: 'opacity 0.7s', opacity: 1} : {transition: 'opacity 0s', opacity: 0}} className="dyn__text">В олимпиадном программировании графы применяются повсеместно. От самых
                 простых задач на обход в ширину до сложных комбинаций из раличных алгоритмов.</p>
 
-        </div>
+        </a>
     )
 }
 const Strings = (props) => {
@@ -153,7 +153,7 @@ const Strings = (props) => {
     }, [f, props.flag])
 
     return(
-        <div className={check(f) ? 'el all__h__cell__shadows t__el_h t__el' : 'el t__el'}
+        <a href="strings/" className={check(f) ? 'el all__h__cell__shadows t__el_h t__el' : 'el t__el'}
         onMouseEnter={() => {setTr(1)}}
         onMouseLeave={() => {setTr(0)}}
         >
@@ -169,7 +169,7 @@ const Strings = (props) => {
 
 
             </div>
-        </div>
+        </a>
     )
 }
 

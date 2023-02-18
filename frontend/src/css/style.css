@@ -76,7 +76,11 @@ h1{
 
 .logo{
     width: 150px;
+}
 
+.picture {
+    width: 100%;
+    max-width: 950px;
 }
 
 .red{

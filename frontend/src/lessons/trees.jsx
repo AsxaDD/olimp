@@ -10,7 +10,7 @@ const code1 = `for (int i = 0; i < 5; i++){
     print(1)
 }`
 
-const Number_theory = () => {
+const Trees = () => {
     return (
         <div>
             <Topbar></Topbar>
@@ -21,7 +21,7 @@ const Number_theory = () => {
 
             <div className="main__cont">
                 
-                <MyTabs themes={['say', 'gex']}>
+                <MyTabs themes={['gay', 'sex']}>
 
                     <div>
                         say
@@ -38,4 +38,4 @@ const Number_theory = () => {
     )
 }
 
-export default Number_theory
+export default Trees

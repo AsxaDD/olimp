@@ -54,8 +54,6 @@ const MyCalendar = () => {
     useEffect(() => {
         axios.get(`/api/get_event`)
             .then(res => {
-
-                console.log(res.data)
                 setData(res.data)
             })
     }, [])
@@ -86,6 +84,8 @@ const MyCalendar = () => {
         let tmp_arr = []
 
         for (let i in events2){
+            
+
             tmp_arr.push(<LeftBarElement
                 key={events2[i]}
                 event={events2[i]}
@@ -155,16 +155,25 @@ const MyCalendar = () => {
     const myTileContent = (activeStartDate) => {
         let [day, month, year] = returnDate(activeStartDate, 1)
         let list = []
+        let already_added = []
 
         if (checkIfDateInAData(day, month, year)){
             for (let event in data[year][month][day]){
-                list.push(
-                    <div
-                        className="color__circle"
-                        style={{backgroundColor: `${data[year][month][day][event]["color"]}`}}
-                        key={data[year][month][day][event]["event"]}
-                    />
-                )
+                let event_header = data[year][month][day][event]["event"]
+
+                console.log(event_header)
+                
+                if (already_added.includes(event_header) == false) {
+                    list.push(
+                        <div
+                            className="color__circle"
+                            style={{backgroundColor: `${data[year][month][day][event]["color"]}`}}
+                            key={event_header}
+                        />
+                    )
+                }
+
+                already_added.push(event_header)
             }
         } else return(<div className="color__circle" style={ {opacity: 0} }></div>)
 

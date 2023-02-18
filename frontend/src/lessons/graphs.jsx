@@ -3,19 +3,26 @@ import '../css/style.css'
 import React from 'react';
 import MyTabs from "../baza/MyTabs";
 import Question from "../baza/question";
-import SyntaxHightlighterPython from "../baza/CodeBlocksPython";
+import SyntaxHightlighterCPP from "../baza/CodeBlocksCPP";
 
-const code1 = `print('hello')
-for i in range(5):
-    print(bebra)
+const code1 = `print('hi')
+for i in range(1): 
+    print(1)
+while True:
+    t = 123
 `
 
 const Graphs = () => {
     return (
     <div>
         <Topbar></Topbar>
+
+        <div style={{ maxWidth: 950, textAlign: 'left', margin: '0 auto'}}>
+                <h1 style={{ maxWidth: 950, marginBottom: 0, marginTop: 40}}>Темы:</h1>
+        </div>
+
         <div className="main__cont">
-                <h1 style={{ maxWidth: 890}}>Темы:</h1>
+                
                 <MyTabs themes={['Основные понятия', 'Поиск в ширину', 'Поиск в глубину', 'Алгоритм Дейкстры',
                     'Алгоритм Беллмана-Форда', 'Алгоритм Флойда-Уоршелла ', 'Топологическая сортировка',
                     'Алгоритм Краскала', 'Алгоритм Прима', 'Расстояние Хэмминга'
@@ -47,7 +54,7 @@ const Graphs = () => {
                                     непосещенных вершин.
                                 </p>
 
-                                <SyntaxHightlighterPython code={code1} />
+                                <SyntaxHightlighterCPP code={code1} />
 
                                 <p>В процессе поиска в ширину мы обходим вершины уровень за уровнем.
                                     Сначала посещаются вершины, отстоящие от начальной на расстояние 1,
@@ -55,7 +62,7 @@ const Graphs = () => {
                                     непосещенных вершин.
                                 </p>
 
-                                <Question question={'Сколько?'} answers={['два', 'один', ['ноль', 1]]} />
+                                <Question question={'Сколько?'} answers={['два', 'один', ['десять', '23']]} />
 
 
                                 <h2 id='realisations'>Реализации</h2>

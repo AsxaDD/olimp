@@ -15,20 +15,20 @@ const Topbar = () => {
                 </a>
 
                 <div className="nav__bar">
-                    <a href={`${process.env.REACT_APP_ROOT_ADDR}`}>
+                    <a href={`/`}>
                         <div className="center__menu__elem news">
                             Обучение
                         </div>
                     </a>
 
-                    <a href={`${process.env.REACT_APP_ROOT_ADDR}calendar`}>
+                    <a href={`/calendar`}>
                         <div className="center__menu__elem schedule">
                             Календарь
                         </div>
                     </a>
 
                     <div className="center__menu__elem groups">
-                        <a href={`${process.env.REACT_APP_ROOT_ADDR}news`}>Новости</a>
+                        <a href={`/news`}>Новости</a>
                     </div>
                 </div>
 

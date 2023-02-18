@@ -3,19 +3,28 @@ import '../css/style.css'
 import React from 'react';
 import MyTabs from "../baza/MyTabs";
 import Question from "../baza/question";
-import MySyntaxHightlighter from "../baza/CodeBlocksPython";
-
+import SyntaxHightlighterPython from "../baza/CodeBlocksPython";
+const code1 = `for (int i = 0; i < 5; i++){
+    cout << i;
+    print(1)
+}`
 
 const Number_theory = () => {
     return (
         <div>
             <Topbar></Topbar>
+
+            <div style={{ maxWidth: 950, textAlign: 'left', margin: '0 auto'}}>
+                <h1 style={{ maxWidth: 950, marginBottom: 0, marginTop: 40}}>Темы:</h1>
+            </div>
+
             <div className="main__cont">
-                <h1 style={{ maxWidth: 890}}>Темы:</h1>
+                
                 <MyTabs themes={['say', 'gex']}>
 
                     <div>
                         say
+                        <SyntaxHightlighterPython code={code1} />
                     </div>
 
                     <div>

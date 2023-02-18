@@ -6,8 +6,8 @@ import {
     Routes,
     Route,
 } from "react-router-dom";
-import Graphs from "./lessons/graphs.js";
-import Number_theory from './lessons/number_theory';
+import Graphs from "./lessons/graphs.jsx";
+import Number_theory from './lessons/number_theory.jsx';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import MyCalendar from "./baza/MyCalendar";

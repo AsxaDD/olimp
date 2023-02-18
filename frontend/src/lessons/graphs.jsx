@@ -3,6 +3,7 @@ import '../css/style.css'
 import React from 'react';
 import graph1 from '../pics/graph1.png'
 import hlst from '../pics/half_stepeni.png'
+import depth_search from '../pics/DepthFirstSearchTimestampsRu.svg.png'
 import MyTabs from "../baza/MyTabs";
 import Question from "../baza/question";
 import SyntaxHightlighterCPP from "../baza/CodeBlocksCPP";
@@ -23,6 +24,43 @@ const code4 = `int adj[N][N];
 const code5 = `vector<pair<int,int>> edges;
 `
 const code6 = `vector<tuple<int,int,int>> edges;`
+
+const code7 = `vector<int> adj[N];`
+const code8 = `bool visited[N];
+`
+const code9 = `void dfs(int s) {
+    if (visited[s]) return;
+    visited[s] = true;
+    //	обработать	вершину	s
+    for (auto u: adj[s]) {
+        dfs(u);
+    }
+}
+   `
+const code10 = `def dfs(graph, start, visited=None):
+    if visited is None:
+        visited = set()
+    visited.add(start)
+
+    print(start)
+
+    for next in graph[start] - visited:
+        dfs(graph, next, visited)
+    return visited
+
+
+graph = {'0': set(['1', '2']),
+     '1': set(['0', '3', '4']),
+     '2': set(['0']),
+     '3': set(['1']),
+     '4': set(['2', '3'])}
+
+dfs(graph, '0')`
+const code11 = ``
+const code12 = ``
+const code13 = ``
+const code14 = ``
+
 
 const Graphs = () => {
     return (
@@ -172,13 +210,26 @@ const Graphs = () => {
                     </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     <div className="flex__cont__for__articles">
                         <div className="article" id="a0">
                             <div className="text">
                                 <h1>Поиск в ширину</h1>
 
-                                
-
+                            
                                 <p>
                                     При поиске в ширину (breadth-first search - BFS) вершины графа посещаются в 
                                     порядке возрастания расстояния от начальной вершины. Следовательно, 
@@ -226,23 +277,54 @@ const Graphs = () => {
 
 
 
+
+
+
+
+
+
+
+
+
                     <div className="flex__cont__for__articles">
                         <div className="article" id="a0">
                             <div className="text">
-                                <h1>Обход в ширину 2</h1>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam voluptatibus incidunt ullam dolores fugiat ab, totam similique doloribus ut quidem obcaecati enim qui libero officia repudiandae veritatis quam optio fuga. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, fugiat. Saepe ipsam doloribus cumque assumenda nihil. At accusantium minus quam, beatae delectus omnis repellendus nulla suscipit tempora, voluptatibus in consequatur? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat esse delectus veniam suscipit quia quo unde voluptates ad. Qui fugit officiis explicabo id voluptas obcaecati sapiente ullam dolor quod deleniti!</p>
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt quibusdam laboriosam deserunt unde commodi cum maiores odio alias quod modi! Obcaecati ad dolorum eius debitis. Aperiam commodi ullam minus praesentium? Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, corporis nemo. Quod, eos, atque nesciunt placeat delectus architecto repudiandae, provident enim ullam exercitationem tempore hic officiis iste laborum accusantium ex!</p>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet soluta commodi, nostrum tempore eaque fuga quo magnam odio, iusto, ut officia ipsum consequuntur accusantium adipisci exercitationem maiores eveniet eum asperiores. Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis porro animi voluptatibus quasi necessitatibus et, amet eum quo a sunt quibusdam? A nam hic soluta at ut voluptatem optio vitae! Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis ullam reiciendis quam ab cum veniam mollitia maxime voluptates dolorum adipisci, magnam repellendus. Hic accusamus, ducimus veritatis explicabo maxime tenetur sapiente.</p>
+                                <h2 id='3'>Определение</h2>
+                                <p>Поиск в глубину (англ. Depth-first search, DFS) — один из методов обхода графа. Стратегия поиска в глубину, как и следует из названия, состоит в том, чтобы идти «вглубь» графа, насколько это возможно. Алгоритм поиска описывается рекурсивно: перебираем все исходящие из рассматриваемой вершины рёбра. Если ребро ведёт в вершину, которая не была рассмотрена ранее, то запускаем алгоритм от этой нерассмотренной вершины, а после возвращаемся и продолжаем перебирать рёбра. Возврат происходит в том случае, если в рассматриваемой вершине не осталось рёбер, которые ведут в нерассмотренную вершину. Если после завершения алгоритма не все вершины были рассмотрены, то необходимо запустить алгоритм от одной из нерассмотренных вершин.</p>
+                                
+                                <p>
+                                Поиск в глубину всегда следует по одному пути, пока на нем еще имеются вершины. После этого он возвращается назад и начинает исследовать
+другие части графа. Алгоритм запоминает посещенные вершины, так что
+каждая обрабатывается только один раз.
+                                </p>
+
+                                <img alt='' src={depth_search} className="picture"></img>
+
+                                <h2 id='4'>Реализации</h2>
+
+                                <p>. Поиск в глубину удобно реализовать рекурсивно. Показанная ниже функция dfs начинает поиск с заданной вершины. Предполагается, что граф представлен списками смежности, хранящимися в массиве</p>
+
+                                <SyntaxHightlighterCPP code={code7}/>
+                                <p>Кроме того, используется массив</p>
+                                <SyntaxHightlighterCPP code={code8}/> 
+                                <p>в котором запоминаются посещенные вершины. В начальный момент все
+элементы этого массива равны false, но когда алгоритм заходит в вершину s, в элемент visited[s] записывается true. Функцию можно реализовать на C++
+следующим образом:</p>
+                                <SyntaxHightlighterCPP code={code9}/> 
+                                <p>Временная сложность поиска в глубину равна O(n + m), где n – число
+вершин, а m – число ребер, поскольку алгоритм обрабатывает каждую вершину и каждое ребро ровно один раз.</p>
+                                <p>Реализация на Python:</p>
+                                <SyntaxHightlighterCPP code={code10}/> 
+
+                                <p className='source'>Источники: "Олимпиадное программирование", Антти Лааксонен | Wikipedia</p>
                             </div>
                         </div>
 
                         <div className="sidebar">
                             <ul>
-                                <li>Введение</li>
-                                <li style={{ lineHeight: 0.9 }}>Основные понятия</li>
-                                <li>Примеры</li>
-                                <li>Реализации</li>
-                                <li>Задачи</li>
+                                <a href='#3'><li>Определение</li></a>
+                                <a href='#4'><li>Реализации</li></a>
+
                             </ul>
                         </div>
                     </div>

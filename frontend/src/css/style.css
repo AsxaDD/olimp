@@ -79,8 +79,11 @@ h1{
 }
 
 .picture {
-    width: 100%;
-    max-width: 950px;
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 .red{

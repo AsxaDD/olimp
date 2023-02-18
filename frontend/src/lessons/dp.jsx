@@ -5,6 +5,40 @@ import MyTabs from "../baza/MyTabs";
 import Question from "../baza/question";
 import SyntaxHightlighterPython from "../baza/CodeBlocksPython";
 
+const fibonacciMemoization = `
+    # Вычисление n-ого числа Фибоначчи с помощью мемоизации
+
+    # В данном словаре будут хранится результаты вызова функции \`fib\`
+    mem_table = {}
+    
+    def fib(n):
+        if n == 1 or n == 2:
+            return 1
+        
+        if not n in mem_table:
+            # Если до этого мы не считали результат \`fib\` для n
+            # то добавляем этот результат в таблицу мемоизации
+            mem_table[n] = fib(n - 1) + fib(n - 2) 
+
+        return mem_table[n]
+`;
+
+const fibonacciInbuiltMemoization = `
+    # Вычисление n-ого числа с помощью встроенной в Python мемоизации
+
+    import functools
+
+    # functools.cache предоставляет специальный декоратор для эффективной мемоизации функций
+    # однако для его работы требуется, чтобы ВСЕ аргументы функции могли быть хэшируемыми
+    # Например: list не хэшируется, вместо него необходимо использовать tuple
+    @functools.cache
+    def fib(n):
+        if n == 1 or n == 2:
+            return 1
+        
+        return fib(n - 1) + fib(n - 2)
+`;
+
 const DP = () => {
   return (
     <div>
@@ -104,7 +138,33 @@ const DP = () => {
             </div>
           </div>
 
-          <div>gex</div>
+          <div>
+            <div className="flex__cont__for__articles">
+              <div className="article">
+                <div className="text">
+                  <h1>Основные понятия</h1>
+                  <p>
+                    Меомизация (от англ. "memory" - память и "optimization" -
+                    оптимизация) - сохранение результатов выполнения функций
+                    (или других исполняемых объектов) для последующего
+                    использования в прогамме.
+                  </p>
+                  <p>
+                    Позволяет за счёт использования памяти ускорить выполнение
+                    программы. Часто применяется в динамическом программировании
+                    для хранения промежуточных данных.
+                  </p>
+
+                  <h1>Примеры</h1>
+                  <p>Все примеры приведены на языке программирования Python.</p>
+                  <SyntaxHightlighterPython code={fibonacciMemoization} />
+                  <SyntaxHightlighterPython
+                    code={fibonacciInbuiltMemoization}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </MyTabs>
       </div>
     </div>

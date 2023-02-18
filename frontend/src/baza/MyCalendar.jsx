@@ -52,7 +52,7 @@ const MyCalendar = () => {
     }
 
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_ROOT_ADDR}api/get_event`)
+        axios.get(`/api/get_event`)
             .then(res => {
 
                 console.log(res.data)

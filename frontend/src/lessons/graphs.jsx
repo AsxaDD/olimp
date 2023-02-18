@@ -1,6 +1,7 @@
 import Topbar from "../baza/Topbar";
 import '../css/style.css'
 import React from 'react';
+import graph1 from '../pics/graph1.png'
 import MyTabs from "../baza/MyTabs";
 import Question from "../baza/question";
 import SyntaxHightlighterCPP from "../baza/CodeBlocksCPP";
@@ -39,6 +40,8 @@ const Graphs = () => {
                         <div className="article" id="a0">
                             <div className="text">
                                 <h1>Поиск в ширину</h1>
+
+                                <img alt='' src={graph1}></img>
 
                                 <p>
                                     При поиске в ширину (breadth-first search - BFS) вершины графа посещаются в 

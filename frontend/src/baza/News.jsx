@@ -71,7 +71,7 @@ const MyNews2 = () => {
     }
 
     const doRequest = (lang, tag, is_new) => {
-        axios.post(`${process.env.REACT_APP_ROOT_ADDR}api/${lang}_${tag}_news/`, {
+        axios.post(`/api/${lang}_${tag}_news/`, {
             'latest_id': `${latest_id}`,
         }).then(res => {
             try{

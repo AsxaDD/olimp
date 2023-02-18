@@ -59,11 +59,6 @@ def create_article(request):
 
 
 
-
-
-
-
-
 import ast
 class ReturnEvent(APIView):
     def post(self, request):

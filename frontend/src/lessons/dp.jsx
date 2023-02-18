@@ -1,41 +1,114 @@
 import Topbar from "../baza/Topbar";
-import '../css/style.css'
-import React from 'react';
+import "../css/style.css";
+import React from "react";
 import MyTabs from "../baza/MyTabs";
 import Question from "../baza/question";
 import SyntaxHightlighterPython from "../baza/CodeBlocksPython";
 
-const code1 = `for (int i = 0; i < 5; i++){
-    cout << i;
-    print(1)
-}`
-
 const DP = () => {
-    return (
-        <div>
-            <Topbar></Topbar>
+  return (
+    <div>
+      <Topbar></Topbar>
 
-            <div style={{ maxWidth: 950, textAlign: 'left', margin: '0 auto'}}>
-                <h1 style={{ maxWidth: 950, marginBottom: 0, marginTop: 40}}>Темы:</h1>
+      <div style={{ maxWidth: 950, textAlign: "left", margin: "0 auto" }}>
+        <h1 style={{ maxWidth: 950, marginBottom: 0, marginTop: 40 }}>Темы:</h1>
+      </div>
+
+      <div className="main__cont">
+        <MyTabs themes={["Основные понятия", "Мемоизация", "Рекурсия"]}>
+          <div className="flex__cont__for__articles">
+            <div className="article">
+              <div className="text">
+                <h1>Основные понятия</h1>
+                <p>
+                  Динамическое программирование - способ решения сложных задач
+                  путём разбиения их на более простые подзадачи. Этот способ в
+                  основном применяется к задачам, которые можно явно разделить
+                  на конкретные подчасти, покрывающие своим решением всю задачу.
+                </p>
+                <p>
+                  Как правило, результаты выполнения этих "подчастей"
+                  объединяются с помощью некого алгоритма, в результате которого
+                  получается решение.
+                </p>
+
+                <h1>Основная идея</h1>
+                <p>
+                  Оптимальная подструктура в динамическом программировании
+                  означает, что оптимальное решение подзадач меньшего размера
+                  может быть использовано для решения исходной задачи. К
+                  примеру, кратчайший путь в графе из одной вершины (обозначим
+                  s) в другую (обозначим t) может быть найден так: сначала
+                  считаем кратчайший путь из всех вершин, смежных с s, до t, а
+                  затем, учитывая веса рёбер, которыми s соединена со смежными
+                  вершинами, выбираем лучший путь до t (через какую вершину
+                  лучше всего пойти).
+                </p>
+                <p>
+                  В общем случае мы можем решить задачу, в которой присутствует
+                  оптимальная подструктура, проделывая следующие три шага.
+                  Разбиение задачи на подзадачи меньшего размера. Нахождение
+                  оптимального решения подзадач рекурсивно, проделывая такой же
+                  трехшаговый алгоритм. Использование полученного решения
+                  подзадач для конструирования решения исходной задачи.
+                  Подзадачи решаются делением их на подзадачи ещё меньшего
+                  размера и т. д., пока не приходят к тривиальному случаю
+                  задачи, решаемой за константное время (ответ можно сказать
+                  сразу). К примеру, если нам нужно найти n!, то тривиальной
+                  задачей будет 1! = 1 (или 0! = 1).
+                </p>
+
+                <h1>Примеры задач</h1>
+                <p>
+                  <ul>
+                    <li>
+                      <a
+                        className="link"
+                        href="https://en.wikipedia.org/wiki/Knapsack_problem"
+                      >
+                        Задача о рюкзаке (Knapsack problem)
+                      </a>
+                    </li>
+
+                    <li>
+                      <a
+                        className="link"
+                        href="https://en.wikipedia.org/wiki/Fibonacci_number"
+                      >
+                        Задача о вычислении чисел Фибоначчи
+                      </a>
+                    </li>
+
+                    <li>
+                      <a
+                        className="link"
+                        href="https://en.wikipedia.org/wiki/Matrix_chain_multiplication"
+                      >
+                        Задача о порядке перемножения матриц (Matrix chain
+                        multiplication)
+                      </a>
+                    </li>
+
+                    <li>
+                      <a
+                        className="link"
+                        href="https://en.wikipedia.org/wiki/Longest_common_subsequence"
+                      >
+                        Задача о набольшей общей подпоследовательности (Longest
+                        common subsequence)
+                      </a>
+                    </li>
+                  </ul>
+                </p>
+              </div>
             </div>
+          </div>
 
-            <div className="main__cont">
-                
-                <MyTabs themes={['gay', 'sex']}>
+          <div>gex</div>
+        </MyTabs>
+      </div>
+    </div>
+  );
+};
 
-                    <div>
-                        say
-                        <SyntaxHightlighterPython code={code1} />
-                    </div>
-
-                    <div>
-                        gex
-                    </div>
-
-                </MyTabs>
-            </div>
-        </div>
-    )
-}
-
-export default DP
+export default DP;

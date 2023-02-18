@@ -10,11 +10,11 @@ import gradientFunc from 'random-gradient'
 // <MyTabs themes={['Tab1', 'Tab2', ...]}>
 //
 //     <div>
-//         content 1
+//         content associated with Tab1
 //     </div>
 //
 //     <div>
-//         content 2
+//         content associated with Tab2
 //     </div>
 //
 //     ...
@@ -90,6 +90,7 @@ const MyTabs = (props) => {
     }, [activeTab])
 
     return (
+        
         <div className="Tabs">
             <ul className="themes">
                 {data}

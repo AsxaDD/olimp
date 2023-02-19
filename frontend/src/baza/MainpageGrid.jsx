@@ -101,8 +101,7 @@ const NumberTheory = (props) => {
 
             <p style={check(f)
                 ? {transition: 'opacity 0.7s', opacity: 1}
-                : is_transparent === 1 ? {transition: 'opacity 0.7s', opacity: 1} : {transition: 'opacity 0s', opacity: 0}} className="b__text">В олимпиадном программировании графы применяются повсеместно. От самых
-                простых задач на обход в ширину до сложных комбинаций из раличных алгоритмов.</p>
+                : is_transparent === 1 ? {transition: 'opacity 0.7s', opacity: 1} : {transition: 'opacity 0s', opacity: 0}} className="b__text">Решения для многих сложных задачек требуют не только знания алгоритмов и структур данных, но и математики</p>
 
 
         </a>
@@ -138,8 +137,7 @@ const DynamicProg = (props) => {
 
             <p style={check(f)
                 ? {transition: 'opacity 0.7s', opacity: 1}
-                : is_transparent === 1 ? {transition: 'opacity 0.7s', opacity: 1} : {transition: 'opacity 0s', opacity: 0}} className="dyn__text">В олимпиадном программировании графы применяются повсеместно. От самых
-                простых задач на обход в ширину до сложных комбинаций из раличных алгоритмов.</p>
+                : is_transparent === 1 ? {transition: 'opacity 0.7s', opacity: 1} : {transition: 'opacity 0s', opacity: 0}} className="dyn__text">ДП - мощная парадигма, которая используется и за пределами олимпиадного программирования. Она позволяет разбить сложною задачу на простые, решения которых в купе дадут желаемый результат</p>
 
         </a>
     )

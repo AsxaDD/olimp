@@ -90,7 +90,7 @@ const MyNews2 = () => {
 
     useEffect(() => {
         doRequest(formData.lang, formData.tag, 1)
-    }, [])
+    }, [formData])
 
     useEffect(() => {
         doRequest(formData.lang, formData.tag, 1)
@@ -161,7 +161,7 @@ const MyNews2 = () => {
                 </div>
 
 
-                <div className={'news__cont'}>
+                <div className={'news__cont'} style = {{'overflow': 'hidden'}}> 
                     {news}
                     <div className={'news__button__wrapper'}>
                         <div

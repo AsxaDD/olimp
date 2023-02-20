@@ -119,6 +119,7 @@ const MyCalendar = () => {
                         <p>{data[year][month][day][event]["description"]}</p>
                         <a
                             href={data[year][month][day][event]["link"]}
+                            target="_blank"
                             style={{textDecoration: `underline ${data[year][month][day][event]["color"]}`}}>
                             Ссылка</a>
                     </SwiperSlide>

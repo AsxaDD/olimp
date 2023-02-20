@@ -137,7 +137,7 @@ const DynamicProg = (props) => {
 
             <p style={check(f)
                 ? {transition: 'opacity 0.7s', opacity: 1}
-                : is_transparent === 1 ? {transition: 'opacity 0.7s', opacity: 1} : {transition: 'opacity 0s', opacity: 0}} className="dyn__text">ДП - мощная парадигма, которая используется и за пределами олимпиадного программирования. Она позволяет разбить сложною задачу на простые, решения которых в купе дадут желаемый результат</p>
+                : is_transparent === 1 ? {transition: 'opacity 0.7s', opacity: 1} : {transition: 'opacity 0s', opacity: 0}} className="dyn__text">ДП - мощная парадигма, которая используется и за пределами олимпиадного программирования. Она позволяет разбить сложною задачу на простые, решения которых вкупе дадут желаемый результат</p>
 
         </a>
     )

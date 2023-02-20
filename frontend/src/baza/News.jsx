@@ -75,7 +75,6 @@ const MyNews2 = () => {
             'latest_id': `${latest_id}`,
         }).then(res => {
             try{
-                console.log(res.data)
                 let tmp_arr = returnPreNewsArray(res.data)
                 if (is_new === 1) setNews(tmp_arr)
                 else {
@@ -109,20 +108,13 @@ const MyNews2 = () => {
     return(
         <div>
             <Topbar />
-            <div className={'main__cont'} style={ {flexWrap: 'nowrap'} }>
-                <div className={'news__cont'}>
-                    {news}
-                    <div className={'news__button__wrapper'}>
-                        <div
-                            onClick={() => doRequest(formData.lang, formData.tag, 0)}
-                            className={'news__download__more__butt'}
-                        >Загрузить ещё</div>
-                    </div>
-                </div>
-                <div className={'sidebar news__sidebar'}>
+            <div className={'main__cont'} style={ {flexWrap: 'wrap', maxWidth: '850px'} }>
+
+                <div className={'news__sidebar'}>
                     <spav style={{color: 'grey'}}>Язык</spav>
-                    <hr className={'news__sidebar__hr'} />
+                    
                     <form>
+                        <hr className={'news__sidebar__hr'} />
                         <div className={'news__sidebar__radio'}>
                             <input onChange={handleChange}
                                    type="radio"
@@ -131,6 +123,7 @@ const MyNews2 = () => {
                                    id="ru_lang"
                                    checked={formData.lang === 'ru'}/>Русский<br />
                         </div>
+                        
                         <div className={'news__sidebar__radio'}>
                             <input onChange={handleChange}
                                    type="radio"
@@ -166,6 +159,18 @@ const MyNews2 = () => {
                     </form>
                     <br />
                 </div>
+
+
+                <div className={'news__cont'}>
+                    {news}
+                    <div className={'news__button__wrapper'}>
+                        <div
+                            onClick={() => doRequest(formData.lang, formData.tag, 0)}
+                            className={'news__download__more__butt'}
+                        >Загрузить ещё</div>
+                    </div>
+                </div>
+                
             </div>
 
         </div>

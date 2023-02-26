@@ -60,6 +60,85 @@ struct linked_list {
 }
 `;
 
+const zeroOneKnapsack = `
+# Подсчитывает цену всех текущих предметов с условием, что их вес не превышает максимальный
+def total_value(items, max_weight):
+    return sum([x[2] for x in items]) if sum([x[1] for x in items]) <= max_weight else 0
+ 
+# Таблица мемоизации
+cache = {}
+
+def solve(items, max_weight):
+    # Если список предметов пуст, то оптимальный расклад - пустой кортеж
+    if not items:
+        return ()
+
+    # Иначе рекурсивно вычисляем оптимальный расклад
+    if (items, max_weight) not in cache:
+        head = items[0]
+        tail = items[1:]
+        include = (head,) + solve(tail, max_weight - head[1])
+        dont_include = solve(tail, max_weight)
+
+        if total_value(include, max_weight) > total_value(dont_include, max_weight):
+            answer = include
+        else:
+            answer = dont_include
+
+        # Не забываем мемоизировать результаты вычислений
+        cache[(items,max_weight)] = answer
+
+    return cache[(items,max_weight)]
+ 
+# Предметы формата (название, вес, цена)
+items = (
+    ("map", 9, 150), ("compass", 13, 35), ("water", 153, 200), ("sandwich", 50, 160),
+    ("glucose", 15, 60), ("tin", 68, 45), ("banana", 27, 60), ("apple", 39, 40),
+    ("cheese", 23, 30), ("beer", 52, 10), ("suntan cream", 11, 70), ("camera", 32, 30),
+    ("t-shirt", 24, 15), ("trousers", 48, 10), ("umbrella", 73, 40),
+    ("waterproof trousers", 42, 70), ("waterproof overclothes", 43, 75),
+    ("note-case", 22, 80), ("sunglasses", 7, 20), ("towel", 18, 12),
+    ("socks", 4, 50), ("book", 30, 10),
+    )
+max_weight = 400
+solution = solve(items, max_weight)
+
+print("items:")
+for x in solution:
+    print(x[0])
+print("value:", total_value(solution, max_weight))
+print("weight:", sum([x[1] for x in solution]))
+`;
+
+const longestCommonSubsequence = `
+def lcs(seq1, seq2):
+    # Здесь создаётся матрица, хранящая длины наибольших подпоследоваетльностей на определённых индексах seq1 и seq2
+    lens = [[0] * (len(seq2)+1) for _ in range(len(seq1)+1)]
+
+    # Производим полный перебор каждых двух позиций в seq1 и seq2
+    for i, x in enumerate(seq1):
+        for j, y in enumerate(seq2):
+            if x == y:
+                lens[i+1][j+1] = lens[i][j] + 1
+            else:
+                lens[i+1][j+1] = max(lens[i+1][j], lens[i][j+1])
+
+    # Считываем результат в res
+    res = []
+    j = len(seq2)
+    for i in range(1, len(seq1) + 1):
+        if lens[i][j] != lens[i-1][j]:
+            res.append(seq1[i-1])
+            
+    return res
+
+
+s1 = [1, 6, 2, 1, 7, 8]
+s2 = [3, 6, 4, 2, 9, 11, 7]
+
+print(lcs(s1, s2))
+`;
+
 const DP = () => {
   return (
     <div>
@@ -254,9 +333,9 @@ const DP = () => {
                   В самом простом понимании "проблема о рюкзаке" (также
                   "проблема о ранце" или "knapsack problem") представляет из
                   себя следующее: перед вами имеется рюкзак с вместимостью C
-                  у.е., а так же N предметов, у каждого из которых есть объём V
-                  и цена P; вам необходимо заполнить рюкзак так, чтобы сумма
-                  всех P была максимальной, а сумма всех V не превышала C.
+                  у.е., а также N предметов, у каждого из которых есть объём V и
+                  цена P; вам необходимо заполнить рюкзак так, чтобы сумма всех
+                  P была максимальной, а сумма всех V не превышала C.
                 </p>
 
                 <p>
@@ -301,6 +380,67 @@ const DP = () => {
                   программирования. Именно такой метод является наиболее
                   популярным в решении данной задачи.
                 </p>
+
+                <p>
+                  Ниже приведено решение задачи разновидности "Рюкзак 0-1". За
+                  основу взят код с RosettaCode.{" "}
+                  <a
+                    className="link"
+                    href="https://rosettacode.org/wiki/Knapsack_problem/0-1"
+                  >
+                    Найти его можно здесь.
+                  </a>
+                  <SyntaxHightlighterPython code={zeroOneKnapsack} />
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="flex__cont__for__articles">
+            <div className="article">
+              <div className="text">
+                <h1>Краткое определение</h1>
+                <p>
+                  Допустим у нас есть два списка, A и B, состоящих из целых
+                  чисел: [1, 6, 2, 1, 7, 8] и [3, 6, 4, 2, 9, 11, 7]. Наибольшей
+                  общей подпоследовательностью этих двух списков будет являться
+                  список K, состоящий из таких элементов (k1, k2, k3.. kn), что
+                  для i=1..n ki принадлежит как A, так и B. В нашем случае ответ
+                  K = [2, 6, 7] (или любая перестановка K).
+                </p>
+
+                <p>
+                  Существует задача, звучащая достаточно похоже на эту -{" "}
+                  <a
+                    className="link"
+                    href="https://en.wikipedia.org/wiki/Longest_common_substring"
+                  >
+                    задача о наибольшей общей подстроке
+                  </a>
+                  . В этом разделе она разобрана не будет, но её также можно
+                  решить путём динамического программирования.
+                </p>
+
+                <h1>Способы решения</h1>
+                <p>
+                  Как и в случае задачи с рюкзаком, задачу о наибольшей общей
+                  подпоследовательности можно решить элементарным перебором. Но
+                  как уже, скорее всего, догадывается читатель, это самый
+                  неэффективный способ решения.
+                </p>
+
+                <p>
+                  Ниже приведено одно из простейших решений с помощью
+                  динамического программирования - через матрицу длин. За основу
+                  взят код с RosettaCode.{" "}
+                  <a
+                    href="https://rosettacode.org/wiki/Longest_common_subsequence"
+                    className="link"
+                  >
+                    Найти его можно здесь.
+                  </a>
+                </p>
+
+                <SyntaxHightlighterPython code={longestCommonSubsequence} />
               </div>
             </div>
           </div>

@@ -1,6 +1,7 @@
 import '../css/style.css'
 import SyntaxHightlighterCPP from "../baza/CodeBlocksCPP";
 import React, {useEffect} from 'react';
+import Question from "../baza/question";
 const randStr = (length) => {
     let result = '';
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -29,6 +30,12 @@ const Article = (props) => {
             let id = randStr(5)
             headers.push([content, id])
             res.push(<h1 id={id}>{content}</h1>)
+        } 
+        else if (tag === 'q') {
+            // [ ['question', ['ans1', ['ans2', 1], 'ans3'] ], 'q']
+            let question = content[0]
+            let answers = content[1]
+            res.push(<Question question={question} answers={answers}/>)
         } 
         else if (tag === 'h3') {
             res.push(<h3>{content}</h3>)

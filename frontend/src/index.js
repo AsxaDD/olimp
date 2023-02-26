@@ -14,7 +14,7 @@ import DP from './lessons/dp'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import MyCalendar from "./baza/MyCalendar";
-import CreateEvent from "./baza/Create_event_form";
+
 import MyNews2 from "./baza/News";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -30,6 +30,7 @@ root.render(
               <Route path="dp" element={<DP />} />
               <Route path="calendar" element={<MyCalendar />} />
               <Route path="news" element={<MyNews2 />} />
+              
           </Routes>
       </BrowserRouter>
   </React.StrictMode>

@@ -30,7 +30,6 @@ root.render(
               <Route path="dp" element={<DP />} />
               <Route path="calendar" element={<MyCalendar />} />
               <Route path="news" element={<MyNews2 />} />
-              <Route path="admin/create_event" element={<CreateEvent />} />
           </Routes>
       </BrowserRouter>
   </React.StrictMode>

@@ -14,7 +14,6 @@ import DP from './lessons/dp'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import MyCalendar from "./baza/MyCalendar";
-
 import MyNews2 from "./baza/News";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
